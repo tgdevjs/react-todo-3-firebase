@@ -27,6 +27,10 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
+    modulesDirectories: [
+      'node_modules',
+      './src/components'
+    ],
     alias: {
       applicationStyle: 'src/styles/app.scss'
     },
