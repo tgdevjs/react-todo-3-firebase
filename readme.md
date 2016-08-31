@@ -1,5 +1,5 @@
-### react-boilerplate-3
-react boilerplate with foundation for styles and karma for tests.
+### react-todo-1
+react todo app without redux
 
 On heroku:  
-https://stormy-dusk-69852.herokuapp.com/
+https://obscure-crag-47189.herokuapp.com/
