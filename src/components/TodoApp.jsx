@@ -17,7 +17,7 @@ var TodoApp = React.createClass({
       ]
     };
   },
-  handleSearchTodo: function (showCompleted, searchText) {
+  handleSearch: function (showCompleted, searchText) {
     this.setState({
       showCompleted,
       searchText: searchText.toLowerCase()
@@ -31,7 +31,7 @@ var TodoApp = React.createClass({
     return (
       <div>
         <h3>TodoApp Component</h3>
-        <TodoSearch handleSearchTodo={this.handleSearchTodo}/>
+        <TodoSearch onSearch={this.handleSearch}/>
         <TodoList todos={todos}/>
         <AddTodo handleAddTodo={this.handleAddTodo}/>
       </div>
