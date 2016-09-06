@@ -1,5 +1,5 @@
-### react-todo-1
-react todo app without redux
+### react-todo-2
+react todo app with redux
 
 On heroku:  
-https://obscure-crag-47189.herokuapp.com/
+https://arcane-sands-39548.herokuapp.com
