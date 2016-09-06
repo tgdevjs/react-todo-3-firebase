@@ -33,6 +33,7 @@
     "webpack": "^1.13.1"
   },
   "devDependencies": {
+    "deep-freeze-strict": "^1.1.1",
     "expect": "^1.14.0",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^0.2.2",
