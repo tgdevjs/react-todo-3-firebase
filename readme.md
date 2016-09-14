@@ -1,5 +1,5 @@
-### react-todo-2
-react todo app with redux and tests with karma.
+### react-todo-3-firebase
+react todo app with redux, karma, and firebase.
 
 On heroku:  
-https://arcane-sands-39548.herokuapp.com
+https://fast-garden-16576.herokuapp.com/
