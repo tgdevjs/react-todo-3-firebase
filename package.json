@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "npm run build && node server.js",
-    "test": "karma start"
+    "test": "NODE_ENV=test karma start"
   },
   "author": "tgdevjs",
   "license": "MIT",
