@@ -1,19 +1,18 @@
 var $ = require('jquery');
 
 module.exports = {
-  filterTodos(todos, showCompleted, searchText) {
+  filterTodos: function (todos, showCompleted, searchText) {
     var filteredTodos = todos;
 
     // Filter by showCompleted
-    filteredTodos = filteredTodos.filter( (todo) => {
+    filteredTodos = filteredTodos.filter((todo) => {
       return !todo.completed || showCompleted;
-     });
+    });
 
     // Filter by searchText
-    var lowerCaseSearchText = searchText.toLowerCase();
-    filteredTodos = filteredTodos.filter( (todo) => {
-      var text = todo.text.toLowerCase()
-      return searchText.length === 0 || text.indexOf(lowerCaseSearchText) > -1;
+    filteredTodos = filteredTodos.filter((todo) => {
+      var text = todo.text.toLowerCase();
+      return searchText.length === 0 || text.indexOf(searchText) > -1;
     });
 
     // Sort todos with non-completed first
@@ -26,6 +25,7 @@ module.exports = {
         return 0;
       }
     });
+
     return filteredTodos;
   }
-}
+};

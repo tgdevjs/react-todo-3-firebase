@@ -139,4 +139,23 @@ describe('Actions', () => {
       }, done);
     });
   });
+
+  describe('Tests with Auth Actions', () => {
+    it('should generate Login action object', () => {
+      var action = {
+        type: 'LOGIN',
+        uid: '123'
+      };
+      const res = actions.login(action.uid);
+      expect(res).toEqual(action);
+    });
+
+    it('should generate Logout action object', () => {
+      var action = {
+        type: 'LOGOUT'
+      };
+      const res = actions.logout();
+      expect(res).toEqual(action);
+    });
+  });
 });

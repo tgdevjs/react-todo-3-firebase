@@ -1,14 +1,9 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
 var expect = require('expect');
-var $ = require('jquery');
-var TestUtils = require('react-addons-test-utils');
 
 var TodoAPI = require('TodoAPI');
 
 describe('TodoAPI', () => {
-
-  beforeEach( () => {
+  beforeEach(() => {
     localStorage.removeItem('todos');
   });
 
@@ -17,45 +12,43 @@ describe('TodoAPI', () => {
   });
 
   describe('filterTodos', () => {
-    var todos = [
-      {
-        id: 1,
-        text: 'Some text here.',
-        completed: true
-      },
-      {
-        id: 2,
-        text: 'Other text here.',
-        completed: false
-      },
-      {
-        id: 3,
-        text: 'Some text here.',
-        completed: true
-      }
-    ];
+    var todos = [{
+      id: 1,
+      text: 'Some text here',
+      completed: true
+    },{
+      id: 2,
+      text: 'Other text here',
+      completed: false
+    },{
+      id: 3,
+      text: 'Some text here',
+      completed: true
+    }];
+
     it('should return all items if showCompleted is true', () => {
       var filteredTodos = TodoAPI.filterTodos(todos, true, '');
       expect(filteredTodos.length).toBe(3);
     });
-    it('should only return non-completed items if showCompleted is false', () => {
+
+    it('should return non-completed todos when showCompleted is false', () => {
       var filteredTodos = TodoAPI.filterTodos(todos, false, '');
       expect(filteredTodos.length).toBe(1);
     });
+
     it('should sort by completed status', () => {
       var filteredTodos = TodoAPI.filterTodos(todos, true, '');
       expect(filteredTodos[0].completed).toBe(false);
     });
+
     it('should filter todos by searchText', () => {
-      var searchText = 'sOme';
-      var filteredTodos = TodoAPI.filterTodos(todos, true, searchText);
+      var filteredTodos = TodoAPI.filterTodos(todos, true, 'some');
       expect(filteredTodos.length).toBe(2);
     });
+
     it('should return all todos if searchText is empty', () => {
-      var searchText = '';
-      var filteredTodos = TodoAPI.filterTodos(todos, true, searchText);
+      var filteredTodos = TodoAPI.filterTodos(todos, true, '');
       expect(filteredTodos.length).toBe(3);
     });
   });
-
 });
